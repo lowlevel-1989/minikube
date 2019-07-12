@@ -1,0 +1,21 @@
+<- primero instalar kubernetes
+$ minikube --kubernetes-version v1.11.10 start
+$ minikube status
+$ minikube stop
+$ minikube ssh
+
+<- ahora para trabajar desde el host y no desde la maquina virtual
+$ eval $(minikube docker-env)
+$ docker ps
+
+<- misc
+$ kubectl get namespace
+$ kubectl get sa
+$ kubectl get sa -n namespace
+$ kubectl get role
+$ kubectl get rolebinding
+$ kubectl get clusterrole
+$ kubectl get clusterrolebinding
+
+$ kubectl get pod -n namespace 
+$ kubectl run my-shell --rm -i --tty --image centos:7 -- bash
