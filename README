@@ -17,5 +17,7 @@ $ kubectl get rolebinding
 $ kubectl get clusterrole
 $ kubectl get clusterrolebinding
 
+$ TOKEN=$(kubectl get secrets -n namespace -o jsonpath="{.items[?(@.metadata.annotations['kubernetes\.io/service-account\.name']=='example-name-service-account')].data.token}"|base64 -d) 
+
 $ kubectl get pod -n namespace 
 $ kubectl run my-shell --rm -i --tty --image centos:7 -- bash
