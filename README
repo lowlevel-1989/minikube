@@ -21,3 +21,5 @@ $ TOKEN=$(kubectl get secrets -n namespace -o jsonpath="{.items[?(@.metadata.ann
 
 $ kubectl get pod -n namespace 
 $ kubectl run my-shell --rm -i --tty --image centos:7 -- bash
+
+$ scp -i $(minikube ssh-key) <local-path> docker@$(minikube ip):<remote-path>
